@@ -13,6 +13,9 @@
     scroll-behavior: smooth;
     transition: all .3 ease;
 }
+body {
+    width:100%;
+}
 .nav{
     display: flex;
     width: 100%;
