@@ -93,6 +93,7 @@ body {
 .skill{
     min-height: 100vh;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     background-color: var(--lgray);
 }
