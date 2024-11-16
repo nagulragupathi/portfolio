@@ -2,6 +2,8 @@
 :root{
     --gray : rgb(185, 185, 185);
     --lgray : rgb(112, 110, 110);
+    --agray:rgba(112, 110, 110,.2);
+    --hov:rgb(161, 161, 161);
 }
 *{
     margin: 0;
@@ -29,7 +31,7 @@ body {
     justify-content: space-around;
     padding: 10px;
     background-color: white;
-    z-index: 1;
+    z-index: 2;
 }
 .logo{
     font-size: 35px;
@@ -42,7 +44,7 @@ body {
     transition: all .3s ease;
 }
 .link a:hover{
-    color: var(--gray);
+    color: var(--hov);
 }
 .btn,.con-btn{
     padding: 10px 40px;
@@ -121,28 +123,29 @@ body {
 }
 .con{
     position: fixed;
-    width: 100%;
+    width: 500px;
     height: 100%;
     top: 0;
-    left: 0;
+    left: -500px;
     background-color: white;
     display: flex;
+    padding: 30px;
     align-items: center;
     justify-content: center;
-    z-index: 1;
-}
-.con-content{
-    width: 500px;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    background-color: var(--gray);
-    transition: all .3 ease;
+    z-index: 3;
+    border:2px solid var(--lgray) ;
+    transition: all .3s ease;
+    border-top-right-radius: 30px;
 }
 .con.active{
-    display: none;
+    left:0;
+}
+.con-tit{
+    text-align: center;
+    padding: 20px;
+    font-size: 35px;
+    color: rgb(112, 110, 110);
 }
 .con-content:nth-child(n){
     padding: 20px;    
@@ -155,25 +158,37 @@ body {
     width: 100%;
     border-radius: 10px;
     height: 30px;
-    border: none;
+    border: 2px solid var(--lgray);
     outline: none;
 }
 .area{
-    height: 100px;
+    height: 150px;
     width: 100%;
     border-radius: 10px;
+    border: 2px solid var(--lgray);
     padding: 10px;
 }
+.close{
+    width: 10px;
+    height: 10px;
+    padding: 20px;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+}
 @media only screen and (max-width:768px){
-    .home{
-        padding:10px;
-    }
     .nav i{
         display: block;
         font-size: 25px;
     }
     .abt-tit{
         font-size: 30px;
+    }
+    .home{
+        padding: 10px;
     }
     .about{
         padding-top: 10%;
@@ -189,12 +204,14 @@ body {
         display: flex;
         top:60px;
         justify-content: center;
+        gap: 10px;
         left: -70%;
         flex-direction: column;
         background-color: var(--lgray);
         width: 70%;
         height:100%;   
         transition: all .3s ease;
+        padding: 10px;
     }
     .link.active{
         left: 0;
@@ -203,6 +220,15 @@ body {
         color: white;
         font-size: 30px;
         padding: 10px 20px;
+        border: 2px solid transparent;
+        border-radius: 10px;
+    }
+    .link a:hover{
+        border: 2px solid var(--gray);
+        background-color: var(--agray) ;
+    }
+    .con{
+        width: 100%;
     }
 
 }
