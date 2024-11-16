@@ -16,6 +16,9 @@
 body {
     width:100%;
 }
+.nav i{
+    display: none;
+}
 .nav{
     display: flex;
     width: 100%;
@@ -24,14 +27,13 @@ body {
     left: 0;
     align-items: center;
     justify-content: space-around;
-    padding: 5px;
+    padding: 10px;
     background-color: white;
     z-index: 1;
 }
 .logo{
     font-size: 35px;
     color: var(--lgray);
-    padding: 5px 20px;
 }
 .link a{
     padding: 0 10px;
@@ -64,6 +66,7 @@ body {
     background-size:cover;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     min-height: 100vh;
     position: relative;
 }
@@ -77,39 +80,33 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.abt-con{
-    width: 80%;
+    padding: 5%;
+    flex-direction: column;
     color: var(--lgray);
 }
 .abt-tit{
     font-size: 40px;
-    padding: 20px 0;
+    padding: 30px;
 }
-.abt-con p{
+.about p{
    text-align: justify; 
-   font-size: 20px;
+   font-size: 1.7rem;
 }
 .skill{
     min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    background-color: var(--lgray);
-}
-.skill-content{
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    background-color: var(--gray) ;
     gap: 10px;
 }
 .box{
-    width: 30%;
-    min-height: 70%;
     padding: 40px;
+    width: 500px;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 20px;
     color: var(--lgray);
 }
 .box:hover{
@@ -117,6 +114,7 @@ body {
 }
 .box h2{
     padding: 5px 0;
+    text-align: center;
 }
 .box p{
     padding: 20px 0;
@@ -134,11 +132,12 @@ body {
     z-index: 1;
 }
 .con-content{
+    width: 500px;
     display: flex;
     flex-direction: column;
-    min-height:50% ;
-    width: 50%;
-    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
     background-color: var(--gray);
     transition: all .3 ease;
 }
@@ -151,9 +150,61 @@ body {
 .con-content:nth-child(n)::placeholder{
     color: var(--lgray);
 }
-.input,.area{
-    padding: 0 30px;
-    border-radius: 30px;
+.input{
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
     height: 30px;
     border: none;
+    outline: none;
 }
+.area{
+    height: 100px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+}
+@media only screen and (max-width:768px){
+    .nav i{
+        display: block;
+        font-size: 25px;
+    }
+    .abt-tit{
+        font-size: 30px;
+    }
+    .about{
+        padding-top: 10%;
+    }
+    .about p{
+        font-size: 1.5rem;
+    }
+    .skill{
+        padding: 20% 3%;
+    }
+    .link{
+        position: fixed;
+        display: flex;
+        top:60px;
+        justify-content: center;
+        left: -70%;
+        flex-direction: column;
+        background-color: var(--lgray);
+        width: 70%;
+        height:100%;   
+        transition: all .3s ease;
+    }
+    .link.active{
+        left: 0;
+    }
+    .link a{
+        color: white;
+        font-size: 30px;
+        padding: 10px 20px;
+    }
+
+}
+
+
+
+
+
