@@ -92,7 +92,7 @@ body {
 }
 .about p{
    text-align: justify; 
-   font-size: 1.7rem;
+   font-size: 25px;
 }
 .skill{
     min-height: 100vh;
@@ -101,12 +101,12 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: var(--gray) ;
+    background-color: var(--lgray) ;
     gap: 10px;
 }
 .box{
     padding: 40px;
-    width: 500px;
+    width: 30vw;
     background-color: white;
     border-radius: 20px;
     color: var(--lgray);
@@ -126,7 +126,7 @@ body {
     width: 500px;
     height: 100%;
     top: 0;
-    left: -500px;
+    left: -800px;
     background-color: white;
     display: flex;
     padding: 30px;
@@ -135,7 +135,7 @@ body {
     flex-direction: column;
     z-index: 3;
     border:2px solid var(--lgray) ;
-    transition: all .3s ease;
+    transition: all 1.5s ease;
     border-top-right-radius: 30px;
 }
 .con.active{
@@ -179,6 +179,52 @@ body {
     justify-content: center;
     align-items: center;
 }
+.project{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 5%;
+}
+.pro-list{
+    width: 28vw;
+    height: 35vh;
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: end;
+    border: 2px solid var(--gray);
+    border-radius: 5px;
+}
+#p1{
+    background: url(lms.jpg)center no-repeat;
+    background-size: cover;
+}
+.pro-list h4{
+    color: var(--lgray);
+}
+.pro-list a{
+    padding: 5px 10px;
+    background-color: var(--lgray);
+    color: white;
+    border: 2px solid var(--lgray);
+    border-radius: 10px;
+}
+.pro-list a:hover{
+    background-color: white;
+    color:var(--lgray);
+}
+.footer{
+    min-height: 20vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 @media only screen and (max-width:768px){
     .nav i{
         display: block;
@@ -198,6 +244,9 @@ body {
     }
     .skill{
         padding: 20% 3%;
+    }
+    .box{
+        width: 80%;
     }
     .link{
         position: fixed;
@@ -226,6 +275,9 @@ body {
     .link a:hover{
         border: 2px solid var(--gray);
         background-color: var(--agray) ;
+    }
+    .pro-list{
+        width: 80vh;
     }
     .con{
         width: 100%;
